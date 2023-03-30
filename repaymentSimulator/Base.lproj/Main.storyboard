@@ -1,24 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w42-J6-2K3">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--グラフ-->
+        <scene sceneID="tFM-lU-S0r">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="rYp-da-UpR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kRG-hS-Ehc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="Oow-jE-Qxv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="グラフ" id="jkh-Ya-Cxx"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFG-jS-WvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="797.70992366412213" y="-9.1549295774647899"/>
+        </scene>
+        <!--支払い設定-->
+        <scene sceneID="cu3-9V-yTR">
+            <objects>
+                <viewController id="OMy-nJ-CI7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4cK-Cl-9mx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xLm-aG-xSv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="支払い設定" id="N6H-0n-WhN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNV-Gt-eFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782.44274809160299" y="1329.5774647887324"/>
+        </scene>
+        <!--HOME-->
+        <scene sceneID="xbL-PL-IBO">
+            <objects>
+                <viewController id="78T-fO-83B" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DtF-Oo-qck">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XhL-gT-pG4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="HOME" id="aTW-Yo-DIA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iwc-MK-zKj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797.70992366412213" y="637.32394366197184"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="luE-hc-oNT">
+            <objects>
+                <tabBarController id="w42-J6-2K3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Hc-lz-o6E">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PFf-dc-g9Z" kind="relationship" relationship="viewControllers" id="p98-cg-xh2"/>
+                        <segue destination="y0P-rf-HmG" kind="relationship" relationship="viewControllers" id="nAC-9g-bWJ"/>
+                        <segue destination="qV6-Pg-mUf" kind="relationship" relationship="viewControllers" id="TMs-AD-3Yp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5VU-37-rr5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1314" y="637"/>
+        </scene>
+        <!--グラフ-->
+        <scene sceneID="16p-0v-Gfd">
+            <objects>
+                <navigationController title="グラフ" automaticallyAdjustsScrollViewInsets="NO" id="y0P-rf-HmG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="グラフ" image="chart.bar.fill" catalog="system" id="qun-Er-ZCZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wBM-t2-rrC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rYp-da-UpR" kind="relationship" relationship="rootViewController" id="Ov3-eR-9Es"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kec-17-sXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129.00763358778624" y="-9.1549295774647899"/>
+        </scene>
+        <!--HOME-->
+        <scene sceneID="wkw-sb-L7W">
+            <objects>
+                <navigationController title="HOME" automaticallyAdjustsScrollViewInsets="NO" id="PFf-dc-g9Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="HOME" image="homekit" catalog="system" id="hJ1-NS-JnT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cca-UR-enJ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="78T-fO-83B" kind="relationship" relationship="rootViewController" id="poe-NZ-OoR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaf-w7-ISa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129.00763358778624" y="637.32394366197184"/>
+        </scene>
+        <!--支払い設定-->
+        <scene sceneID="zwx-Ng-NIH">
+            <objects>
+                <navigationController title="支払い設定" automaticallyAdjustsScrollViewInsets="NO" id="qV6-Pg-mUf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="支払い設定" image="pencil.line" catalog="system" id="8GE-Gx-4vu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ML4-B8-ixX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OMy-nJ-CI7" kind="relationship" relationship="rootViewController" id="cN3-R9-w47"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEZ-bJ-aln" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144.27480916030532" y="1329.5774647887324"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chart.bar.fill" catalog="system" width="128" height="90"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="pencil.line" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
