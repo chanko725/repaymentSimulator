@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_repaymentSimulator_repaymentSimulatorUITests : NSObject
+@end
+@implementation PodsDummy_Pods_repaymentSimulator_repaymentSimulatorUITests
+@end

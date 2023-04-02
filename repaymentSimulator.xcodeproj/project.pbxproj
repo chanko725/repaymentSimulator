@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35C1E75DBD083B365234E80F /* Pods_repaymentSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C0CA1666AEAE9323B726EF /* Pods_repaymentSimulatorTests.framework */; };
 		8A613E5E29D5BD25003F325E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A613E5D29D5BD25003F325E /* AppDelegate.swift */; };
 		8A613E6029D5BD25003F325E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A613E5F29D5BD25003F325E /* SceneDelegate.swift */; };
 		8A613E6229D5BD25003F325E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A613E6129D5BD25003F325E /* ViewController.swift */; };
@@ -17,6 +18,8 @@
 		8A613E7F29D5BD39003F325E /* repaymentSimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A613E7E29D5BD39003F325E /* repaymentSimulatorUITests.swift */; };
 		8A613E8129D5BD39003F325E /* repaymentSimulatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A613E8029D5BD39003F325E /* repaymentSimulatorUITestsLaunchTests.swift */; };
 		8AB9499B29D8216C00BF39F7 /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9499A29D8216C00BF39F7 /* AddController.swift */; };
+		A527807697D112554B97CE54 /* Pods_repaymentSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAE3FDBACAA0B762268F009 /* Pods_repaymentSimulator.framework */; };
+		E44BA8589F91BBAF0AF771EE /* Pods_repaymentSimulator_repaymentSimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ABC14B5CFA538A5B5E9E13 /* Pods_repaymentSimulator_repaymentSimulatorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05C0CA1666AEAE9323B726EF /* Pods_repaymentSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_repaymentSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38BEB644F23ABB7EC5A69F46 /* Pods-repaymentSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repaymentSimulatorTests.release.xcconfig"; path = "Target Support Files/Pods-repaymentSimulatorTests/Pods-repaymentSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		5F6E0285D6B79B599302687D /* Pods-repaymentSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repaymentSimulator.release.xcconfig"; path = "Target Support Files/Pods-repaymentSimulator/Pods-repaymentSimulator.release.xcconfig"; sourceTree = "<group>"; };
+		69DB0FB4481E44A96EE3ADFE /* Pods-repaymentSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repaymentSimulatorTests.debug.xcconfig"; path = "Target Support Files/Pods-repaymentSimulatorTests/Pods-repaymentSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BCFE73F70228497D658152A /* Pods-repaymentSimulator-repaymentSimulatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repaymentSimulator-repaymentSimulatorUITests.release.xcconfig"; path = "Target Support Files/Pods-repaymentSimulator-repaymentSimulatorUITests/Pods-repaymentSimulator-repaymentSimulatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7CAE3FDBACAA0B762268F009 /* Pods_repaymentSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_repaymentSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80ABC14B5CFA538A5B5E9E13 /* Pods_repaymentSimulator_repaymentSimulatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_repaymentSimulator_repaymentSimulatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C1F15343D1E0705EC2CEFC /* Pods-repaymentSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repaymentSimulator.debug.xcconfig"; path = "Target Support Files/Pods-repaymentSimulator/Pods-repaymentSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		8A613E5A29D5BD25003F325E /* repaymentSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = repaymentSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A613E5D29D5BD25003F325E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A613E5F29D5BD25003F325E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		8A613E7E29D5BD39003F325E /* repaymentSimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repaymentSimulatorUITests.swift; sourceTree = "<group>"; };
 		8A613E8029D5BD39003F325E /* repaymentSimulatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repaymentSimulatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8AB9499A29D8216C00BF39F7 /* AddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
+		D29B9C7369BFA1229FD99850 /* Pods-repaymentSimulator-repaymentSimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repaymentSimulator-repaymentSimulatorUITests.debug.xcconfig"; path = "Target Support Files/Pods-repaymentSimulator-repaymentSimulatorUITests/Pods-repaymentSimulator-repaymentSimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A527807697D112554B97CE54 /* Pods_repaymentSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C1E75DBD083B365234E80F /* Pods_repaymentSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44BA8589F91BBAF0AF771EE /* Pods_repaymentSimulator_repaymentSimulatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B00C8F15D56D842524AEAEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85C1F15343D1E0705EC2CEFC /* Pods-repaymentSimulator.debug.xcconfig */,
+				5F6E0285D6B79B599302687D /* Pods-repaymentSimulator.release.xcconfig */,
+				D29B9C7369BFA1229FD99850 /* Pods-repaymentSimulator-repaymentSimulatorUITests.debug.xcconfig */,
+				6BCFE73F70228497D658152A /* Pods-repaymentSimulator-repaymentSimulatorUITests.release.xcconfig */,
+				69DB0FB4481E44A96EE3ADFE /* Pods-repaymentSimulatorTests.debug.xcconfig */,
+				38BEB644F23ABB7EC5A69F46 /* Pods-repaymentSimulatorTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8A613E5129D5BD25003F325E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +114,8 @@
 				8A613E7329D5BD39003F325E /* repaymentSimulatorTests */,
 				8A613E7D29D5BD39003F325E /* repaymentSimulatorUITests */,
 				8A613E5B29D5BD25003F325E /* Products */,
+				7B00C8F15D56D842524AEAEC /* Pods */,
+				93403B8AAA020C119109CECF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +161,16 @@
 			path = repaymentSimulatorUITests;
 			sourceTree = "<group>";
 		};
+		93403B8AAA020C119109CECF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CAE3FDBACAA0B762268F009 /* Pods_repaymentSimulator.framework */,
+				80ABC14B5CFA538A5B5E9E13 /* Pods_repaymentSimulator_repaymentSimulatorUITests.framework */,
+				05C0CA1666AEAE9323B726EF /* Pods_repaymentSimulatorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A613E8429D5BD39003F325E /* Build configuration list for PBXNativeTarget "repaymentSimulator" */;
 			buildPhases = (
+				AF338EF7ACFED082AA21E416 /* [CP] Check Pods Manifest.lock */,
 				8A613E5629D5BD25003F325E /* Sources */,
 				8A613E5729D5BD25003F325E /* Frameworks */,
 				8A613E5829D5BD25003F325E /* Resources */,
+				85B8451C65D9B2B230F86CE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A613E8729D5BD39003F325E /* Build configuration list for PBXNativeTarget "repaymentSimulatorTests" */;
 			buildPhases = (
+				831B4AB14197DCCD4F98F20C /* [CP] Check Pods Manifest.lock */,
 				8A613E6C29D5BD39003F325E /* Sources */,
 				8A613E6D29D5BD39003F325E /* Frameworks */,
 				8A613E6E29D5BD39003F325E /* Resources */,
@@ -172,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A613E8A29D5BD39003F325E /* Build configuration list for PBXNativeTarget "repaymentSimulatorUITests" */;
 			buildPhases = (
+				9F9787F7092740AE786D9D4D /* [CP] Check Pods Manifest.lock */,
 				8A613E7629D5BD39003F325E /* Sources */,
 				8A613E7729D5BD39003F325E /* Frameworks */,
 				8A613E7829D5BD39003F325E /* Resources */,
+				987A99831283F924ED501624 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +301,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		831B4AB14197DCCD4F98F20C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-repaymentSimulatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85B8451C65D9B2B230F86CE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-repaymentSimulator/Pods-repaymentSimulator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-repaymentSimulator/Pods-repaymentSimulator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-repaymentSimulator/Pods-repaymentSimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		987A99831283F924ED501624 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-repaymentSimulator-repaymentSimulatorUITests/Pods-repaymentSimulator-repaymentSimulatorUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-repaymentSimulator-repaymentSimulatorUITests/Pods-repaymentSimulator-repaymentSimulatorUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-repaymentSimulator-repaymentSimulatorUITests/Pods-repaymentSimulator-repaymentSimulatorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F9787F7092740AE786D9D4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-repaymentSimulator-repaymentSimulatorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF338EF7ACFED082AA21E416 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-repaymentSimulator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A613E5629D5BD25003F325E /* Sources */ = {
@@ -436,6 +585,7 @@
 		};
 		8A613E8529D5BD39003F325E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85C1F15343D1E0705EC2CEFC /* Pods-repaymentSimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +614,7 @@
 		};
 		8A613E8629D5BD39003F325E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F6E0285D6B79B599302687D /* Pods-repaymentSimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +643,7 @@
 		};
 		8A613E8829D5BD39003F325E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69DB0FB4481E44A96EE3ADFE /* Pods-repaymentSimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +664,7 @@
 		};
 		8A613E8929D5BD39003F325E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38BEB644F23ABB7EC5A69F46 /* Pods-repaymentSimulatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +685,7 @@
 		};
 		8A613E8B29D5BD39003F325E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D29B9C7369BFA1229FD99850 /* Pods-repaymentSimulator-repaymentSimulatorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +704,7 @@
 		};
 		8A613E8C29D5BD39003F325E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BCFE73F70228497D658152A /* Pods-repaymentSimulator-repaymentSimulatorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

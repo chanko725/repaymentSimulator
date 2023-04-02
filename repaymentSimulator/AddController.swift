@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Eureka
 //支払いに関するデータを格納する
 var paymentData = [String]()
 
