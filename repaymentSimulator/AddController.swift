@@ -7,6 +7,8 @@
 
 import UIKit
 import Eureka
+//FIXME:Data型にする？サイズは大したことにならないから配列もありだが不具合の温床になりそう
+//https://capibara1969.com/2531/#toc16
 //支払いに関するデータを格納する
 var paymentData = [String]()
 
@@ -32,6 +34,8 @@ class AddController: FormViewController {
     var monthlyRepaymentAmount = Int()
     //月毎の返済日
     var monthlyRepaymentDate = Int()
+    //ボーナス月
+    var bonusMonth : [Int] = []
     //ボーナスの返済額
     var bonusRepaymentAmount = Int()
     //ボーナスの返済日
@@ -44,20 +48,25 @@ class AddController: FormViewController {
         <<< TextRow { row in
             row.title = "支払い先名"
             row.placeholder = "支払い先名"
-            }.onChange{ row in
+        }.onChange{ row in
                 self.paymentName = row.value ?? "paymentName"//変数に格納
-                
-            }
+        }
         //支払い総額
-        //<<< IntRow() {
+        <<< IntRow() { row in
+            row.title = "支払い総額"
+            row.value = 0
+        }.onChange({[unowned self] row in
+            self.totalPayment = row.value ?? 0
+        })
         +++ Section()
         <<< ButtonRow("登録") {row in
             row.title = "登録"
             row.onCellSelection{[unowned self] ButtonCellOf, row in
-                //データ登録＆戻る処理を書く
+                //データ登録
                 paymentData.append(self.paymentName)
+                paymentData.append(String(self.totalPayment))
                 UserDefaults.standard.set(paymentData, forKey: "paymentData")
-                //FIXME:画面を戻る操作でなく、読み込み直すように実装する
+                //前の画面に戻る
                 self.navigationController?.popViewController(animated: true)
             }
         }
