@@ -34,6 +34,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    //画面再表示
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
 }
 
