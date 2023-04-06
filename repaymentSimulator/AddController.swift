@@ -58,8 +58,13 @@ class AddController: FormViewController {
         <<< TextRow {
             $0.title = "支払い先名"
             $0.placeholder = "支払い先名"
-        }.onChange{ row in
-            self.paymentName = row.value ?? "paymentName"
+            $0.add(rule: RuleRequired())
+        //}.onChange{ row in
+           // self.paymentName = row.value ?? "paymentName"
+        }.cellUpdate { cell, row in
+            if !row.isValid {
+                cell.titleLabel?.textColor = .systemRed
+            }
         }
         //支払い総額
         <<< IntRow() {
@@ -90,11 +95,56 @@ class AddController: FormViewController {
         }.onChange({[unowned self] row in
             self.penaltyLate = row.value ?? 0
         })
+        //月毎の返済額
+        <<< IntRow() {
+            $0.title = "月毎の返済額"
+            $0.value = 0
+        }.onChange({[unowned self] row in
+            self.monthlyRepaymentAmount = row.value ?? 0
+        })
         //月毎の返済日
         <<< PickerInlineRow<String>() {
             $0.title = "月毎の返済日"
             $0.options = ["1日","2日","3日","4日","5日","6日","7日","8日","9日","10日","11日","12日","13日","14日","15日","16日","17日","18日","19日","20日","21日","22日","23日","24日","25日","26日","27日","28日","29日","30日","31日","月末"]
             $0.value = $0.options.first
+        }.onChange {[unowned self] row in
+            if row.value == "月末" {
+                self.monthlyRepaymentDate = 999
+            } else {
+                self.monthlyRepaymentDate = Int(row.value?.replacingOccurrences(of: "日", with: "") ?? "0") ?? 0
+            }
+        }
+        //ボーナス月の返済
+        +++ Section()
+        <<< SwitchRow("ボーナス月の返済"){
+            $0.title = $0.tag
+        }
+        <<< MultipleSelectorRow<String>() {
+            $0.title = "ボーナス月"
+            $0.options = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月"]
+            $0.hidden = .function(["ボーナス月の返済"], { form -> Bool in
+                let row: RowOf<Bool>! = form.rowBy(tag: "ボーナス月の返済")
+                return row.value ?? false == false
+            })
+        }
+        <<< IntRow() {
+            $0.title = "返済額"
+            $0.value = 0
+            $0.hidden = .function(["ボーナス月の返済"], { form -> Bool in
+                let row: RowOf<Bool>! = form.rowBy(tag: "ボーナス月の返済")
+                return row.value ?? false == false
+            })
+        }.onChange({[unowned self] row in
+            self.monthlyRepaymentAmount = row.value ?? 0
+        })
+        <<< PickerInlineRow<String>() {
+            $0.title = "返済日"
+            $0.options = ["1日","2日","3日","4日","5日","6日","7日","8日","9日","10日","11日","12日","13日","14日","15日","16日","17日","18日","19日","20日","21日","22日","23日","24日","25日","26日","27日","28日","29日","30日","31日","月末"]
+            $0.value = $0.options.first
+            $0.hidden = .function(["ボーナス月の返済"], { form -> Bool in
+                let row: RowOf<Bool>! = form.rowBy(tag: "ボーナス月の返済")
+                return row.value ?? false == false
+            })
         }.onChange {[unowned self] row in
             if row.value == "月末" {
                 self.monthlyRepaymentDate = 999
