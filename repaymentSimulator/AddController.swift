@@ -7,8 +7,7 @@
 
 import UIKit
 import Eureka
-//FIXME:Data型にする？サイズは大したことにならないから配列もありだが不具合の温床になりそう
-//https://capibara1969.com/2531/#toc16
+//FIXME:validateの記述を共通化
 //支払いに関するデータを格納する
 //var paymentData = [String]()
 struct paymentData {
@@ -38,7 +37,7 @@ struct paymentData {
 
 class AddController: FormViewController {
     
-    var paymentName:String?
+    var paymentName:String = ""
     var totalPayment:Int?
     var paymentMethod:String?
     var annualInterestLate:Double?
@@ -52,27 +51,65 @@ class AddController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LabelRow.defaultCellUpdate = { cell, row in
+            cell.contentView.backgroundColor = .red
+            cell.textLabel?.textColor = .white
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+            cell.textLabel?.textAlignment = .right
+
+        }
+        
         form
         +++ Section()
         //支払い先名
         <<< TextRow {
             $0.title = "支払い先名"
             $0.placeholder = "支払い先名"
-            $0.add(rule: RuleRequired())
-        //}.onChange{ row in
-           // self.paymentName = row.value ?? "paymentName"
-        }.cellUpdate { cell, row in
+            $0.add(rule: RuleRequired(msg:"支払先名は必須です"))
+        }.onChange{ row in
+            self.paymentName = row.value ?? "paymentName"
+        }
+        .onRowValidationChanged { cell, row in
+            let rowIndex = row.indexPath!.row
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                row.section?.remove(at: rowIndex + 1)
+            }
             if !row.isValid {
-                cell.titleLabel?.textColor = .systemRed
+                for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                    let labelRow = LabelRow() {
+                        $0.title = validationMsg
+                        $0.cell.height = { 30 }
+                    }
+                    let indexPath = row.indexPath!.row + index + 1
+                    row.section?.insert(labelRow, at: indexPath)
+                }
             }
         }
         //支払い総額
         <<< IntRow() {
             $0.title = "支払い総額"
             $0.value = 0
+            $0.add(rule: RuleGreaterThan(min: 0, msg:"支払い総額は1円以上です"))
         }.onChange({[unowned self] row in
             self.totalPayment = row.value ?? 0
         })
+        .onRowValidationChanged { cell, row in
+            let rowIndex = row.indexPath!.row
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                row.section?.remove(at: rowIndex + 1)
+            }
+            if !row.isValid {
+                for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                    let labelRow = LabelRow() {
+                        $0.title = validationMsg
+                        $0.cell.height = { 30 }
+                    }
+                    let indexPath = row.indexPath!.row + index + 1
+                    row.section?.insert(labelRow, at: indexPath)
+                }
+            }
+        }
         //支払い方式
         <<< SegmentedRow<String>("paymentMethod"){
             $0.options = ["元利定額方式", "元金定額方式"]
@@ -163,6 +200,8 @@ class AddController: FormViewController {
                 //前の画面に戻る
                 self.navigationController?.popViewController(animated: true)
             }
+        }.onCellSelection { cell, row in
+            row.section?.form?.validate()
         }
     }
 }
