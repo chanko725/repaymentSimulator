@@ -193,6 +193,10 @@ class AddController: FormViewController {
         <<< ButtonRow("登録") {row in
             row.title = "登録"
             row.onCellSelection{[unowned self] ButtonCellOf, row in
+                if (row.section?.form?.validate().count != 0) {
+                    return
+                }
+                
                 //データ登録
 //                paymentData.append(self.paymentName)
 //                paymentData.append(String(self.totalPayment))
@@ -200,8 +204,6 @@ class AddController: FormViewController {
                 //前の画面に戻る
                 self.navigationController?.popViewController(animated: true)
             }
-        }.onCellSelection { cell, row in
-            row.section?.form?.validate()
         }
     }
 }
