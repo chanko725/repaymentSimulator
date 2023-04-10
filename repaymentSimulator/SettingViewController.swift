@@ -26,17 +26,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
      
      }
     
+    //詳細画面への遷移
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedStruct = paymentDataList[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let settingDetailViewController = storyboard.instantiateViewController(withIdentifier: "SettingDetailViewController") as! SettingDetailViewController
+        settingDetailViewController.selectedStruct = selectedStruct
+        navigationController?.pushViewController(settingDetailViewController, animated: true)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
         paymentDataList = getPaymentDataList()
-       /*
-        //追加画面で入力した内容を取得
-        if UserDefaults.standard.object(forKey: "paymentData") != nil {
-            paymentData = UserDefaults.standard.object(forKey: "paymentData") as! [String]
-        }
-        */
     }
 
     override func didReceiveMemoryWarning() {
