@@ -52,6 +52,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //画面再表示
     override func viewWillAppear(_ animated: Bool) {
+        paymentDataList = getPaymentDataList()
         tableView.reloadData()
     }
     
