@@ -18,10 +18,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //リストの表示内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let paymentCell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "paymentCell", for: indexPath)
+        let paymentCell = tableView.dequeueReusableCell(withIdentifier: "paymentCell", for: indexPath)
         let paymentData = paymentDataList[indexPath.row]
-        paymentCell.textLabel?.numberOfLines = 2
-        paymentCell.textLabel!.text = "支払い名称：" + paymentData.paymentName + "\n" + "支払額：¥" +  String(paymentData.totalPayment)
+        paymentCell.accessoryType = .disclosureIndicator
+        paymentCell.textLabel!.text = paymentData.paymentName
+        paymentCell.detailTextLabel?.text = "利用残高：¥" +  String(paymentData.totalPayment)
         return paymentCell
      
      }

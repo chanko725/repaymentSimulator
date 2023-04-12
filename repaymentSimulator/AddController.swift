@@ -7,9 +7,7 @@
 
 import UIKit
 import Eureka
-//FIXME:validateの記述を共通化
 //支払いに関するデータを格納する
-//var paymentData = [String]()
 struct PaymentData : Codable{
     //支払い先名
     var paymentName:String
