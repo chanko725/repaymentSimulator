@@ -5,13 +5,15 @@
 //  Created by 永田光一 on 2023/04/01.
 //
 
+
+//FIXME: 設定内容を削除できるように修正したい
 import UIKit
 import Eureka
 //支払いに関するデータを格納する
 struct PaymentData : Codable{
     //支払い先名
     var paymentName:String
-    //支払い総額
+    //支払い残高
     var totalPayment:Int
     //支払い方式
     var paymentMethod:String
@@ -121,9 +123,9 @@ class AddController: FormViewController {
         }.onRowValidationChanged { cell, row in
             validateFormText(cell: cell,row: row)
         }
-        //支払い総額
+        //支払い残高
         <<< IntRow() {
-            $0.title = "支払い総額"
+            $0.title = "支払い残高"
             $0.value = 0
             $0.add(rule: RuleGreaterThan(min: 0, msg:"支払い総額は1円以上です"))
         }.onChange({[unowned self] row in
@@ -184,6 +186,7 @@ class AddController: FormViewController {
         //月毎の返済日
         <<< PickerInlineRow<String>() {
             $0.title = "月毎の返済日"
+            //FIXME: onChangeで変更しないと1日で登録されない
             $0.options = ["1日","2日","3日","4日","5日","6日","7日","8日","9日","10日","11日","12日","13日","14日","15日","16日","17日","18日","19日","20日","21日","22日","23日","24日","25日","26日","27日","28日","29日","30日","31日","月末"]
             $0.value = $0.options.first
         }.onChange {[unowned self] row in
@@ -193,6 +196,7 @@ class AddController: FormViewController {
                 self.monthlyRepaymentDate = Int(row.value?.replacingOccurrences(of: "日", with: "") ?? "0") ?? 0
             }
         }
+        //FIXME: ボーナス月が無効の時には入れた値をリセットする
         //ボーナス月の返済
         +++ Section()
         <<< SwitchRow("ボーナス月の返済"){
@@ -202,12 +206,23 @@ class AddController: FormViewController {
         }
         <<< MultipleSelectorRow<String>() {
             $0.title = "ボーナス月"
-            $0.options = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月"]
+            $0.options = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
             $0.add(rule: RuleRequired(msg:"ボーナス月は1つ以上選択してください"))
             $0.hidden = .function(["ボーナス月の返済"], { form -> Bool in
                 let row: RowOf<Bool>! = form.rowBy(tag: "ボーナス月の返済")
                 return row.value ?? false == false
             })
+        }.onChange{[unowned self] row in
+            //FIXME: 月の並び順を月の並び順通りに(数字の並びにすると10月台が前に出てくる)
+            var months : [Int] = []
+            if let rowValue = row.value {
+                for month in rowValue {
+                    if let intMonth = Int(month.replacingOccurrences(of: "月", with: "")) {
+                        months.append(intMonth)
+                    }
+                }
+            }
+            self.bonusMonth = months
         }.onRowValidationChanged { cell, row in
             let rowIndex = row.indexPath!.row
             while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
@@ -233,7 +248,7 @@ class AddController: FormViewController {
                 return row.value ?? false == false
             })
         }.onChange({[unowned self] row in
-            self.monthlyRepaymentAmount = row.value ?? 0
+            self.bonusRepaymentAmount = row.value ?? 0
         }).onRowValidationChanged { cell, row in
             validateFormInt(cell: cell,row: row)
         }
@@ -247,9 +262,9 @@ class AddController: FormViewController {
             })
         }.onChange {[unowned self] row in
             if row.value == "月末" {
-                self.monthlyRepaymentDate = 999
+                self.bonusRepaymentDate = 999
             } else {
-                self.monthlyRepaymentDate = Int(row.value?.replacingOccurrences(of: "日", with: "") ?? "0") ?? 0
+                self.bonusRepaymentDate = Int(row.value?.replacingOccurrences(of: "日", with: "") ?? "0") ?? 0
             }
         }
         +++ Section()

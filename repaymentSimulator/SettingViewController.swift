@@ -22,7 +22,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let paymentData = paymentDataList[indexPath.row]
         paymentCell.accessoryType = .disclosureIndicator
         paymentCell.textLabel!.text = paymentData.paymentName
-        paymentCell.detailTextLabel?.text = "利用残高：¥" +  String(paymentData.totalPayment)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let formattedNum = formatter.string(from: NSNumber(value: paymentData.totalPayment)) ?? ""
+        paymentCell.detailTextLabel?.text = "利用残高：¥" +  formattedNum
         return paymentCell
      
      }

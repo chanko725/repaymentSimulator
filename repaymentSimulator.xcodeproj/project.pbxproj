@@ -111,7 +111,6 @@
 		8A613E5129D5BD25003F325E = {
 			isa = PBXGroup;
 			children = (
-				8ACE84C229E446650076B850 /* SettingDetailViewController.swift */,
 				8A613E5C29D5BD25003F325E /* repaymentSimulator */,
 				8A613E7329D5BD39003F325E /* repaymentSimulatorTests */,
 				8A613E7D29D5BD39003F325E /* repaymentSimulatorUITests */,
@@ -138,6 +137,7 @@
 				8A613E5F29D5BD25003F325E /* SceneDelegate.swift */,
 				8A613E6129D5BD25003F325E /* SettingViewController.swift */,
 				8AB9499A29D8216C00BF39F7 /* AddController.swift */,
+				8ACE84C229E446650076B850 /* SettingDetailViewController.swift */,
 				8A613E6329D5BD25003F325E /* Main.storyboard */,
 				8A613E6629D5BD39003F325E /* Assets.xcassets */,
 				8A613E6829D5BD39003F325E /* LaunchScreen.storyboard */,
