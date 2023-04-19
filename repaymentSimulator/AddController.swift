@@ -52,14 +52,7 @@ class AddController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        LabelRow.defaultCellUpdate = { cell, row in
-            cell.contentView.backgroundColor = .red
-            cell.textLabel?.textColor = .white
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
-            cell.textLabel?.textAlignment = .right
-            
-        }
-        
+   
         func validateFormText(cell:TextCell,row:TextRow) {
             let rowIndex = row.indexPath!.row
             while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
@@ -70,6 +63,12 @@ class AddController: FormViewController {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 30 }
+                    }
+                    labelRow.cellUpdate { cell, row in
+                        cell.contentView.backgroundColor = .red
+                        cell.textLabel?.textColor = .white
+                        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+                        cell.textLabel?.textAlignment = .right
                     }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
@@ -88,6 +87,12 @@ class AddController: FormViewController {
                         $0.title = validationMsg
                         $0.cell.height = { 30 }
                     }
+                    labelRow.cellUpdate { cell, row in
+                        cell.contentView.backgroundColor = .red
+                        cell.textLabel?.textColor = .white
+                        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+                        cell.textLabel?.textAlignment = .right
+                    }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
                 }
@@ -104,6 +109,12 @@ class AddController: FormViewController {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 30 }
+                    }
+                    labelRow.cellUpdate { cell, row in
+                        cell.contentView.backgroundColor = .red
+                        cell.textLabel?.textColor = .white
+                        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+                        cell.textLabel?.textAlignment = .right
                     }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
@@ -212,7 +223,7 @@ class AddController: FormViewController {
                 let row: RowOf<Bool>! = form.rowBy(tag: "ボーナス月の返済")
                 return row.value ?? false == false
             })
-        }.onChange{[unowned self] row in
+        }.onChange{ row in
             //FIXME: 月の並び順を月の並び順通りに(数字の並びにすると10月台が前に出てくる)
             var months : [Int] = []
             if let rowValue = row.value {
@@ -233,6 +244,12 @@ class AddController: FormViewController {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 30 }
+                    }
+                    labelRow.cellUpdate { cell, row in
+                        cell.contentView.backgroundColor = .red
+                        cell.textLabel?.textColor = .white
+                        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+                        cell.textLabel?.textAlignment = .right
                     }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
